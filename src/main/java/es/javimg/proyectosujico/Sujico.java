@@ -1,9 +1,5 @@
 package es.javimg.proyectosujico;
 
-import static java.lang.Math.random;
-import static java.lang.StrictMath.random;
-import java.util.Random;
-
 
 public class Sujico {
     
@@ -15,6 +11,7 @@ public class Sujico {
     static final char JUGADOR2 = '2';
     final char VACIO = '.';
     boolean finPartida = false;
+    boolean repetido = false;
     
      public Sujico() {  
         tamXTablero = 3;
@@ -60,5 +57,17 @@ public class Sujico {
         System.out.println();
         }
     
+        public boolean comprobacionRepetidos(int numero) {
+            for(int y=0; y<3; y++) {
+                for(int x=0; x<3; x++) {
+                    if( numero == numeros[x][y] ) {
+                        return true;
+                    }
+                }    
+            }
+        return false;
+        }
     }
+        
 
+       
