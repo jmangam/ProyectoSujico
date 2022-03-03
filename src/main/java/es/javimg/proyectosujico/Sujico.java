@@ -37,12 +37,19 @@ public class Sujico {
     
        
         int numeros[][]=new int[3][3];
+        int numero = 0;
+        boolean comprobacion = false;
         
+        Sujico sujico;
         public void generarAleatorio() {
             for(int x=0;x<3;x++) {
                 for (int y=0;y<3;y++) {
-                numeros[x][y] = (int) (Math.random()*9+1);
-                //System.out.print(numeros[x][y]);
+                    for (int )
+                        numero = (int) (Math.random()*9+1);
+                        comprobacion = sujico.comprobacionRepetidos(numero);
+                
+                
+                //numeros[x][y] = (int) (Math.random()*9+1);
                 }
             }
         }
@@ -65,7 +72,7 @@ public class Sujico {
                     }
                 }    
             }
-        return false;
+            return false;
         }
     }
         
