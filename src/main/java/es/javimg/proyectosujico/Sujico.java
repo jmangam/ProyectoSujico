@@ -12,6 +12,10 @@ public class Sujico {
     final char VACIO = '.';
     boolean finPartida = false;
     boolean repetido = false;
+    int solucion1;
+    int solucion2;
+    int solucion3;
+    int solucion4;
     
      public Sujico() {  
         tamXTablero = 3;
@@ -38,16 +42,19 @@ public class Sujico {
        
         int numeros[][]=new int[3][3];
         int numero = 0;
-        boolean comprobacion = false;
+        boolean comprobacion = true;
         
-        Sujico sujico;
+        
         public void generarAleatorio() {
             for(int x=0;x<3;x++) {
                 for (int y=0;y<3;y++) {
-                    for (int )
+                    comprobacion = true;
+                    while ( comprobacion == true ) {
                         numero = (int) (Math.random()*9+1);
-                        comprobacion = sujico.comprobacionRepetidos(numero);
-                
+                        comprobacion = this.comprobacionRepetidos(numero);
+                        numeros [x][y] = numero;
+
+                    }
                 
                 //numeros[x][y] = (int) (Math.random()*9+1);
                 }
@@ -73,6 +80,21 @@ public class Sujico {
                 }    
             }
             return false;
+        }
+        
+        public void soluciones() {
+            int[] soluciones = new int[4];
+            
+            soluciones[0] = numeros[0][0] + numeros[1][0] + numeros[0][1] + numeros[1][1];
+            soluciones[1] = numeros[1][0] + numeros[2][0] + numeros[1][1] + numeros[2][1];
+            soluciones[2] = numeros[0][1] + numeros[1][1] + numeros[0][2] + numeros[1][2];
+            soluciones[3] = numeros[1][1] + numeros[2][1] + numeros[1][2] + numeros[2][2];
+            
+            System.out.println(soluciones[0]);
+            System.out.println(soluciones[1]);
+            System.out.println(soluciones[2]);
+            System.out.println(soluciones[3]);
+
         }
     }
         
