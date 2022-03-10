@@ -30,7 +30,12 @@ public class App extends Application {
         sujico.mostrarTableroConsola();
         sujico.generarAleatorio();
         sujico.mostrarTableroCompleto();
-        sujico.soluciones();
+        //sujico.mostrarSoluciones();
+        sujico.tableroVisible();
+        sujico.introducirDatos(2,2,2);
+        sujico.mostrarTableroVisible();
+        sujico.comprobacionDatos(2,2);
+        sujico.comprobacionTablero();
     }
 
     public static void main(String[] args) {

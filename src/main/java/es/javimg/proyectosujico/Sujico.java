@@ -12,10 +12,12 @@ public class Sujico {
     final char VACIO = '.';
     boolean finPartida = false;
     boolean repetido = false;
-    int solucion1;
-    int solucion2;
-    int solucion3;
-    int solucion4;
+    int[] soluciones = new int[4];
+    int tablerovisible[][] = new int[3][3];
+    int numero1;
+    int numero2;
+    int numero3;
+    int contador;  
     
      public Sujico() {  
         tamXTablero = 3;
@@ -82,19 +84,73 @@ public class Sujico {
             return false;
         }
         
-        public void soluciones() {
-            int[] soluciones = new int[4];
+        public void generarSoluciones() {
             
             soluciones[0] = numeros[0][0] + numeros[1][0] + numeros[0][1] + numeros[1][1];
             soluciones[1] = numeros[1][0] + numeros[2][0] + numeros[1][1] + numeros[2][1];
             soluciones[2] = numeros[0][1] + numeros[1][1] + numeros[0][2] + numeros[1][2];
             soluciones[3] = numeros[1][1] + numeros[2][1] + numeros[1][2] + numeros[2][2];
             
+
+        }
+        
+        public void mostrarSoluciones() {
             System.out.println(soluciones[0]);
             System.out.println(soluciones[1]);
             System.out.println(soluciones[2]);
             System.out.println(soluciones[3]);
+        }
+        
+        public void tableroVisible() {
 
+            tablerovisible [1][0] =  numeros [1][0];
+            tablerovisible [2][0] =  numeros [2][0];
+            tablerovisible [1][1] =  numeros [1][1];
+            tablerovisible [1][2] =  numeros [1][2];
+            
+        }
+        public void mostrarTableroVisible() {
+            
+            for(int y=0; y<3; y++) {
+                for(int x=0; x<3; x++) {
+                    System.out.print(tablerovisible[x][y]);
+                }
+                System.out.println();
+            }    
+            System.out.println();
+            
+        }
+        
+        
+        public void introducirDatos(int x, int y, int numero) {
+            
+            tablerovisible [x][y] = numero3;
+        }
+        
+        public void comprobacionDatos(int x, int y) {
+            
+            if(tablerovisible [x][y] == numeros [x][y]) {
+               System.out.println("El numero que has seleccionado es correcto en la casilla correspondiente");
+            } else {
+               System.out.println("El numero que has seleccionado  no es correcto en la casilla correspondiente");
+            }
+        }
+        
+        public void comprobacionTablero() {
+
+            for(int y=0; y<3; y++) {
+                for(int x=0; x<3; x++) {
+                    if(tablerovisible [x][y] == numeros [x][y]){
+                    contador++;   
+                    }
+                }                  
+            }  
+            
+            if(contador == 9){
+                System.out.println("Has completado tu tablero exitosamente"); 
+            } else {
+                System.out.println("Tu tablero no esta bien completado");
+            }
         }
     }
         
