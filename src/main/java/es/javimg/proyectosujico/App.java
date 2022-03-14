@@ -27,6 +27,8 @@ public class App extends Application {
                 
         
         Sujico sujico = new Sujico();
+        Tablero tablero = new Tablero();
+        
         sujico.mostrarTableroConsola();
         sujico.generarAleatorio();
         sujico.mostrarTableroCompleto();
@@ -36,6 +38,13 @@ public class App extends Application {
         sujico.mostrarTableroVisible();
         sujico.comprobacionDatos(2,2);
         sujico.comprobacionTablero();
+        tablero.tablero(paneRoot);
+
+        if (sujico.comprobacionTablero() == true) {
+            System.out.println("Has completado tu tablero exitosamente"); 
+        } else {
+            System.out.println("Tu tablero no esta bien completado");
+        }
     }
 
     public static void main(String[] args) {

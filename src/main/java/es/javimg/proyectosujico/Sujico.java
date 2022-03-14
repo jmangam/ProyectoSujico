@@ -136,7 +136,7 @@ public class Sujico {
             }
         }
         
-        public void comprobacionTablero() {
+        public boolean comprobacionTablero() {
 
             for(int y=0; y<3; y++) {
                 for(int x=0; x<3; x++) {
@@ -147,9 +147,9 @@ public class Sujico {
             }  
             
             if(contador == 9){
-                System.out.println("Has completado tu tablero exitosamente"); 
+                return true; 
             } else {
-                System.out.println("Tu tablero no esta bien completado");
+                return false;
             }
         }
     }
