@@ -18,7 +18,7 @@ public class App extends Application {
     public void start(Stage stage) {
         
         Pane paneRoot = new Pane();  //creacion de ventana con sus dimensiones y su nombre
-        Scene scene = new Scene(paneRoot, 998, 500);
+        Scene scene = new Scene(paneRoot, 450, 450);
         stage.setScene(scene);
         stage.setTitle("JuegoJavi");
         stage.show();      

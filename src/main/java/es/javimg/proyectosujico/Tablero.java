@@ -14,12 +14,12 @@ Cuadrado cuadrado = new Cuadrado();
     
     public void montarTablero(Pane paneRoot){
                    
-        for(int x=0; x<400; x++) {
-            y= y+100;
+        for(int x=0; x<300; x++) {
+            x= x+100;
             System.out.println("x:" + x);
-            for(int Y=0; Y<3; Y++) {
+            for(int y=0; y<300; y++) {
                 cuadrado.crearCuadrado(paneRoot, x, y);
-                x= x+100;
+                y= y+100;
                 System.out.println("y:" + y);
             }
             System.out.println();
