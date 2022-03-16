@@ -1,33 +1,27 @@
 package es.javimg.proyectosujico;
 
-
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.Pane;
 
 
 public class Cuadrado{
-    
-    public void crearCuadrado(BorderPane paneRoot){
+
+
+ int y;
+ int x;
+ 
+    public void crearCuadrado(Pane paneRoot, int x, int y){
+
         Rectangle casilla = new Rectangle(); 
         casilla.setWidth(100);
         casilla.setHeight(100);
-        casilla.setX(0);
-        casilla.setY(0);
+        casilla.setX(x);
+        casilla.setY(y);
         casilla.setFill(Color.GREEN);
         casilla.setStroke(Color.BLACK);
         paneRoot.getChildren().add(casilla);
     }
     
-    public void montarTablero(){
-                   
-        for(int y=0; y<3; y++) {
-            for(int x=0; x<3; x++) {
-                this.crearCuadrado(BorderPane paneRoot);
-            }
-            System.out.println();
-        }    
-        System.out.println();
-    }
-    
+
 }

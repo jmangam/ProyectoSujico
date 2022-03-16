@@ -3,7 +3,7 @@ package es.javimg.proyectosujico;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
@@ -12,19 +12,16 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
-    BorderPane paneRoot;
+
 
     @Override
     public void start(Stage stage) {
         
-        short tamXPantalla = 640;
-        short tamYPantalla = 480;
-        
-        paneRoot = new BorderPane();
-        var scene = new Scene(paneRoot, tamXPantalla, tamYPantalla);
+        Pane paneRoot = new Pane();  //creacion de ventana con sus dimensiones y su nombre
+        Scene scene = new Scene(paneRoot, 998, 500);
         stage.setScene(scene);
-        stage.show();
-                
+        stage.setTitle("JuegoJavi");
+        stage.show();      
         
         Sujico sujico = new Sujico();
         Tablero tablero = new Tablero();
@@ -38,7 +35,7 @@ public class App extends Application {
         sujico.mostrarTableroVisible();
         sujico.comprobacionDatos(2,2);
         sujico.comprobacionTablero();
-        tablero.tablero(paneRoot);
+        tablero.montarTablero(paneRoot);
 
         if (sujico.comprobacionTablero() == true) {
             System.out.println("Has completado tu tablero exitosamente"); 
