@@ -8,9 +8,12 @@ import javafx.scene.layout.Pane;
 public class Tablero{
 
 Cuadrado cuadrado = new Cuadrado();
+Circulo circulo = new Circulo();
 
     int x=100;
     int y=100;
+    int xc=500;
+    int yc=250;
     
     public void montarTablero(Pane paneRoot){
                    
@@ -22,9 +25,16 @@ Cuadrado cuadrado = new Cuadrado();
                 y= y+100;
                 System.out.println("y:" + y);
             }
-            System.out.println();
-        }    
-        System.out.println();
+        }  
+        
+        for(int xc=100; xc<300; x++) {
+            xc= xc+100;
+            for(int yc=100; yc<300; y++) {
+                circulo.crearCirculo(paneRoot, xc, yc);
+                yc= yc+100;
+            }
+        } 
+        
     }
     
 }

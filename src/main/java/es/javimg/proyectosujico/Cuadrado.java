@@ -18,7 +18,7 @@ public class Cuadrado{
         casilla.setHeight(100);
         casilla.setX(x);
         casilla.setY(y);
-        casilla.setFill(Color.GREEN);
+        casilla.setFill(Color.WHITE);
         casilla.setStroke(Color.BLACK);
         paneRoot.getChildren().add(casilla);
     }
