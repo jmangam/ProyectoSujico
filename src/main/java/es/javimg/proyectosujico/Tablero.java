@@ -34,8 +34,9 @@ Circulo circulo = new Circulo();
         
     }
     
-    public void rellenarTablero(Pane paneRoot) {
+    public void rellenarTablero(Pane paneRoot,  Sujico sujico) {
         
+        sujico.numeros[][];
             for(int x=0;x<3;x++) {
                 for (int y=0;y<3;y++) {
                     Label label = new Label(numeros[x][y]);

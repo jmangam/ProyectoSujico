@@ -36,6 +36,7 @@ public class App extends Application {
         sujico.comprobacionDatos(2,2);
         sujico.comprobacionTablero();
         tablero.montarTablero(paneRoot);
+        tablero.rellenarTablero(paneRoot, sujico);
 
         if (sujico.comprobacionTablero() == true) {
             System.out.println("Has completado tu tablero exitosamente"); 
