@@ -26,19 +26,18 @@ public class App extends Application {
         Sujico sujico = new Sujico();
         Tablero tablero = new Tablero();
         
-        sujico.mostrarTableroConsola();
         sujico.generarAleatorio();
         sujico.mostrarTableroCompleto();
-        //sujico.mostrarSoluciones();
+        sujico.mostrarSoluciones();
         sujico.tableroVisible();
-        sujico.introducirDatos(2,2,2);
+        sujico.introducirDatos(2,2,2); //parametros para añadir numero al lugar al que pertenece //primer digito x//segundo digito y//tercer digito numero que quiero meter
         sujico.mostrarTableroVisible();
         sujico.comprobacionDatos(2,2);
         sujico.comprobacionTablero();
         tablero.montarTablero(paneRoot);
         tablero.rellenarTablero(paneRoot, sujico);
 
-        if (sujico.comprobacionTablero() == true) {
+        if (sujico.comprobacionTablero() == true) { // if que determina si el tablero fue bien completado o no
             System.out.println("Has completado tu tablero exitosamente"); 
         } else {
             System.out.println("Tu tablero no esta bien completado");

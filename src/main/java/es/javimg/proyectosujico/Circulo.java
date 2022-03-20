@@ -10,7 +10,7 @@ public class Circulo{
 
  
  
-    public void crearCirculo(Pane paneRoot, int xc, int yc){
+    public void crearCirculo(Pane paneRoot, int xc, int yc){ //metodo que crea el circulo para el tablero
 
         Circle solucion = new Circle(); 
         solucion.setCenterX(xc);

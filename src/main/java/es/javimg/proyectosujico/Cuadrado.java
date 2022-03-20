@@ -11,7 +11,7 @@ public class Cuadrado{
  int y;
  int x;
  
-    public void crearCuadrado(Pane paneRoot, int x, int y){
+    public void crearCuadrado(Pane paneRoot, int x, int y){ /// metodo que crea el cuadrado para el tablero
 
         Rectangle casilla = new Rectangle(); 
         casilla.setWidth(100);
