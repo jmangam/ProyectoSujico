@@ -28,7 +28,8 @@ public class App extends Application {
         
         sujico.generarAleatorio();
         sujico.mostrarTableroCompleto();
-        sujico.mostrarSoluciones();
+        sujico.generarSoluciones();
+        //sujico.mostrarSoluciones();
         sujico.tableroVisible();
         sujico.introducirDatos(2,2,2); //parametros para añadir numero al lugar al que pertenece //primer digito x//segundo digito y//tercer digito numero que quiero meter
         sujico.mostrarTableroVisible();
@@ -36,6 +37,7 @@ public class App extends Application {
         sujico.comprobacionTablero();
         tablero.montarTablero(paneRoot);
         tablero.rellenarTablero(paneRoot, sujico);
+        tablero.generaImputs(paneRoot, sujico);
 
         if (sujico.comprobacionTablero() == true) { // if que determina si el tablero fue bien completado o no
             System.out.println("Has completado tu tablero exitosamente"); 
