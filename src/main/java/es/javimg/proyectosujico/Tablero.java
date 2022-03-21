@@ -184,6 +184,7 @@ Circulo circulo = new Circulo();
             resul1.setText("Lo siento, algun numero esta mal colocado");
             resul1.setLayoutX(20);
             resul1.setLayoutY(320);
+            
             if( num1 == sujico.numeros [0][0] && num2 == sujico.numeros [0][1] && num3 == sujico.numeros [2][1] && num4 == sujico.numeros [0][2] && num5 == sujico.numeros [2][2] ){
                     resul1.setVisible(false);
                     paneRoot.getChildren().add(resul);
