@@ -2,6 +2,7 @@ package es.javimg.proyectosujico;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -99,7 +100,7 @@ Circulo circulo = new Circulo();
                     label04.setScaleY(5);
                     paneRoot.getChildren().add(label04);
     }
-    public void generaImputs(Pane paneRoot,  Sujico sujico) {
+    public void generaImputs(Pane paneRoot,  Sujico sujico) { // genera los imputs para meter los datos de las columnas
     
     TextField hueco1 = new TextField ();
     
@@ -161,7 +162,7 @@ Circulo circulo = new Circulo();
     
     
 
-     Button comprobar = new Button("comprobar");
+     Button comprobar = new Button("comprobar"); // crea un boton para comprobar
      comprobar.setLayoutX(335);
      comprobar.setLayoutY(20);
      paneRoot.getChildren().add(comprobar);
@@ -170,30 +171,27 @@ Circulo circulo = new Circulo();
     comprobar.setOnAction(new EventHandler() {
         @Override
         public void handle(Event event) {
-            int num1 = Integer.parseInt( hueco1.getText());
+            int num1 = Integer.parseInt( hueco1.getText()); // esta variables son las encargadas de recoger los numeros que añadimos al imput
             int num2 = Integer.parseInt( hueco2.getText());
             int num3 = Integer.parseInt( hueco3.getText());
             int num4 = Integer.parseInt( hueco4.getText());
             int num5 = Integer.parseInt( hueco5.getText());
             
-            Label resul = new Label ();
-            resul.setText("Enhorabuena,  has conseguido completar el tablero");
-            resul.setLayoutX(20);
-            resul.setLayoutY(320);
-            Label resul1 = new Label ();
-            resul1.setText("Lo siento, algun numero esta mal colocado");
-            resul1.setLayoutX(20);
-            resul1.setLayoutY(320);
             
             if( num1 == sujico.numeros [0][0] && num2 == sujico.numeros [0][1] && num3 == sujico.numeros [2][1] && num4 == sujico.numeros [0][2] && num5 == sujico.numeros [2][2] ){
-                    resul1.setVisible(false);
-                    paneRoot.getChildren().add(resul);
-                    paneRoot.getChildren().add(resul1);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION); //creacion de una alerta de que acertaste todos los numeros
+            alert.setHeaderText("Enhorabuena");
+            alert.setTitle("Enhorabuena");
+            alert.setContentText("Todos los numeros son correctos");
+            alert.showAndWait();
+
                     
             }else {
-                    resul.setVisible(false);
-                    paneRoot.getChildren().add(resul);  
-                    paneRoot.getChildren().add(resul1);   
+                    Alert alert = new Alert(Alert.AlertType.ERROR); // creacion de una alerta de que te has equivocado
+                    alert.setHeaderText(null);
+                    alert.setTitle("Te has equivocado");
+                    alert.setContentText("Lo siento, algun numero esta mal colocado");
+                    alert.showAndWait();   
                             } 
             
 
